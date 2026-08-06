@@ -1,0 +1,255 @@
+.menu {
+    position: relative;
+    z-index: 20;
+    background-color: var(--color-azul);
+    }
+
+    .menu__contenedor {
+    width: min(1500px, 90%);
+    margin: 0 auto;
+    min-height: 70px;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    align-items: stretch;
+    padding: 0 1rem;
+    }
+
+    .menu__logo {
+    justify-self: start;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    }
+
+    .menu__logo-imagen {
+    display: block;
+    max-height: 36px;
+    width: auto;
+    }
+
+    .menu__logo-icono {
+    font-size: 28px;
+    }
+
+    /*nombre de marca, sólo se ve en mobile*/
+    .menu__marca {
+        display: none;
+        font-size: 18px;
+        font-weight: 600;
+        color: var(--color-negro);
+    }
+
+    .menu__logo-texto {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+    }
+
+    .menu__logo-texto strong {
+    font-size: 10px;
+    }
+
+    .menu__logo-texto small {
+    margin-top: 4px;
+    font-size: 9px;
+    letter-spacing: 1px;
+    }
+
+    .menu__lista {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    list-style: none;
+    gap: 80px;
+    margin: 0;
+    padding: 0;
+    }
+
+    .menu__contacto {
+    justify-self: end;
+    }
+
+    .menu__item {
+    margin: 0;
+    }
+
+    .menu__item--contacto{
+    margin-left: auto;
+    margin-right: 0;
+    }
+
+    .menu__item--mobile {
+    display: none;
+    }
+
+    .menu__enlace {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    color: var(--color-negro);
+    font-size: 14px;
+    font-weight: 400;
+    text-decoration: none;
+    padding-bottom: 10px;
+    transition: font-weight 0.15s ease;
+    }
+
+.menu__enlace::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-negro);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    }
+
+    .menu__enlace:hover {
+    font-weight: 700;
+    }
+
+    .menu__enlace:hover::after {
+    opacity: 1;
+    }
+
+    /* hamburguesa */
+    .menu__boton {
+    width: 42px;
+    height: 42px;
+    display: none;
+    padding: 8px;
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+    }
+
+    .menu__linea {
+    width: 100%;
+    height: 3px;
+    display: block;
+    margin: 5px 0;
+    border-radius: 4px;
+    background-color: var(--color-negro);
+    transition:
+        transform 0.3s ease,
+        opacity 0.3s ease;
+    }
+
+    .menu__boton--activo .menu__linea:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+    }
+
+    .menu__boton--activo .menu__linea:nth-child(2) {
+    opacity: 0;
+    }
+
+    .menu__boton--activo .menu__linea:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+    }
+
+/* TABLET Y MENÚ MÓVIL */
+
+@media (max-width: 800px) {
+    .menu__contenedor {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        min-height: 70px;
+        padding: 10px 0;
+    }
+
+    .menu__boton {
+        display: block;
+    }
+    
+    .menu__logo-imagen {
+        display: none;
+    }
+
+    .menu__marca {
+        display: block;
+    }
+
+    .menu__lista {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 30;
+        width: 100%;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 8px 0;
+        background-color: var(--color-gris-claro);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+    }
+
+    .menu__lista--abierta {
+        display: flex;
+    }
+
+    .menu__item {
+        width: 100%;
+    }
+
+    .menu__contacto{
+        display: none;
+    }
+    .menu__item--mobile{
+        display: block;
+        width: 100%;
+    }
+
+    .menu__enlace {
+        width: 100%;
+        padding: 13px 20px;
+        font-size: 14px;
+        font-weight: 400;
+        text-align: center;
+        color: var(--color-negro);
+    }
+
+    .menu__enlace::after {
+        display: none;
+    }
+
+    .menu__enlace:hover {
+        opacity: 1;
+        font-weight: 400;
+        background-color: rgba(0, 0, 0, 0.379);
+    }
+}
+
+  /* CELULAR */
+
+@media (max-width: 520px) {
+    .menu__contenedor {
+        width: 92%;
+    }
+
+    .menu__logo-imagen {
+    max-height: 32px;
+    }
+
+    .menu__logo-texto strong {
+        font-size: 18px;
+    }
+
+    .menu__logo-icono {
+        font-size: 25px;
+    }
+
+    .menu__lista{
+        flex-direction: column;
+    }
+
+    .menu__item--contacto{
+        margin-left: 0;
+    }
+}

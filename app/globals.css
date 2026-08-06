@@ -1,0 +1,237 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  color: var(--color-black);
+  background-color: var(--color-white);
+}
+
+h1 {
+
+}
+
+:root {
+  --color-blue: #444ce7;
+  --color-white: #ffffff;
+  --color-grey-light: #d3d3d3;
+  --color-grey-light2: #a2a2a2;
+  --color-orange: #b33609;
+  --color-grey-mid: #828282;
+  --color-grey-dark: #4a4a4a;
+  --color-grey-dark2: #282828;
+  --color-black: #000000;
+
+
+  --font-size-h1: clamp(2.25rem, 4vw, 3rem);
+  --font-size-h2: clamp(1.75rem, 3vw, 2.25rem);
+  --font-size-h3: clamp(1.25rem, 2vw, 1.5rem);
+  --font-size-body: 1rem;
+  --font-size-button: 1rem;
+  --font-size-button-featured: clamp(1rem, 1.5vw, 1.125rem);
+
+  --font-weight-regular: 400;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  --line-height-heading: 1.2;
+  --line-height-body: 1.6;
+
+}
+
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  margin-bottom: 1.5rem;
+  font-size: var(--font-size-h1);
+  font-weight: var(--font-weight-bold);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  margin-bottom: 1.25rem;
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-heading);
+  letter-spacing: -0.015em;
+}
+
+h3 {
+  margin-bottom: 1rem;
+  font-size: var(--font-size-h3);
+  font-weight: var(--font-weight-semibold);
+  line-height: 1.3;
+}
+
+p {
+  margin-bottom: 1rem;
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-body);
+}
+
+/* Estilos compartidos por todos los botones */
+
+.buttonFeatured,
+.buttonPrimary,
+.buttonSecondary {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.5rem;
+  font-family: inherit;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+/* Llamado principal del hero */
+
+.buttonFeatured {
+  min-height: 3.5rem;
+  padding: 1rem 2rem;
+  border: 2px solid var(--color-black);
+  font-size: var(--font-size-button-featured);
+  font-weight: var(--font-weight-bold);
+  line-height: 1.2;
+  color: var(--color-white);
+  background-color: var(--color-black);
+}
+
+/* Acción principal: Comprar, Enviar, Contactar */
+
+.buttonPrimary {
+  min-height: 3rem;
+  padding: 0.75rem 1.5rem;
+  border: 2px solid var(--color-black);
+  font-size: var(--font-size-button);
+  font-weight: var(--font-weight-semibold);
+  line-height: 1.2;
+  color: var(--color-white);
+  background-color: var(--color-black);
+}
+
+/* Acción secundaria: Ver producto, Conocer más */
+
+.buttonSecondary {
+  min-height: 3rem;
+  padding: 0.75rem 1.5rem;
+  border: 2px solid var(--color-black);
+  font-size: var(--font-size-button);
+  font-weight: var(--font-weight-semibold);
+  line-height: 1.2;
+  color: var(--color-black);
+  background-color: transparent;
+}
+
+.buttonFeatured:hover,
+.buttonPrimary:hover {
+  color: var(--color-black);
+  background-color: transparent;
+}
+
+.buttonSecondary:hover {
+  color: var(--color-white);
+  background-color: var(--color-black);
+}
+
+.buttonFeatured:focus-visible,
+.buttonPrimary:focus-visible,
+.buttonSecondary:focus-visible {
+  outline: 3px solid #6c63ff;
+  outline-offset: 3px;
+}
+
+
+/* =========================
+  BIENVENIDA
+========================= */
+
+.bienvenida {
+  padding: 48px 20px;
+  color: var(--color-negro);
+  text-align: center;
+  background-color: var(--color-blanco);
+}
+
+.bienvenida__titulo {
+  margin-bottom: 14px;
+  font-size: 30px;
+  font-weight: 400;
+}
+
+.bienvenida__texto {
+  width: min(700px, 100%);
+  margin: 0 auto;
+  color: var(--color-gris);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* =========================
+  FOOTER
+========================= */
+
+.footer {
+  padding: 22px 20px;
+  color: rgba(255, 255, 255, 0.75);
+  text-align: center;
+  background-color: var(--color-gris);
+}
+
+.footer__texto {
+  font-size: 12px;
+}
+
+/* =========================
+  TABLET Y MENÚ MÓVIL
+========================= */
+
+@media (max-width: 800px) {
+
+  .pilares__contenedor {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .pilar:nth-child(2) {
+    border-right: none;
+  }
+
+  .pilar:nth-child(-n + 2) {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.13);
+  }
+}
+
+/* =========================
+CELULAR
+========================= */
+
+@media (max-width: 520px) {
+  .pilares__contenedor {
+    grid-template-columns: 1fr;
+  }
+
+  .pilar {
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.13);
+  }
+
+  .pilar:last-child {
+    border-bottom: none;
+  }
+}
