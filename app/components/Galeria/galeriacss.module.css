@@ -21,7 +21,16 @@
 
 .imagen,
 .imagenProducto {
-    object-fit: cover;
+  object-fit: cover;
+  filter: grayscale(100%);
+  transition:
+    filter 0.4s ease,
+    transform 0.4s ease;
+}
+
+.itemProducto:hover .imagenProducto {
+  filter: grayscale(0%);
+  transform: scale(1.03);
 }
 
 .caption {
@@ -73,9 +82,11 @@
     width: 14.1%;
     height: 14.8%;
     z-index: 3;
-    background-color: var(--color-blue);
+    background-color: var(--color-grey-light);
     cursor: pointer;
     transition: transform 0.2s ease;
+    position: relative;
+    overflow: hidden;
 }
 
 .itemProducto:hover {

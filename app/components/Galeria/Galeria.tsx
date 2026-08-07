@@ -86,23 +86,20 @@ export default function Galeria({ productId = 1 }: GaleriaProps) {
                 </div>
 
                 {/* Producto destacado (bloque verde del wireframe), enlaza a la ficha del producto */}
+
                 <Link
                     href={producto ? `/pages/tienda/producto/${producto.id}` : "#"}
                     className={`${styles.item} ${styles.itemProducto}`}
                     aria-label={producto ? producto.title : "Producto destacado"}
-                >
+                    >
                     {producto && (
                         <Image
-                            src={producto.image}
-                            alt={producto.title}
-                            fill
-                            className={styles.imagenProducto}
-                            sizes="(max-width: 768px) 60vw, 15vw"
+                        src={producto.image}
+                        alt={producto.title}
+                        fill
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        className={styles.imagenProducto}
                         />
-                    )}
-
-                    {isLoading && (
-                        <span className={styles.productoCargando}>...</span>
                     )}
                 </Link>
 
