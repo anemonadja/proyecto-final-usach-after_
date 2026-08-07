@@ -97,67 +97,65 @@ interface ProductDetail {
 
     return (
         <div className={styles.wrapper}>
-        <Link href="/pages/tienda" className={styles.backLink}>
-            ← Volver a la tienda
-        </Link>
-
-        <div className={styles.content}>
-            <div className={styles.gallery}>
-            <div className={styles.thumbnails}>
-                {gallery.map((thumb, index) => (
-                <button
-                    key={index}
-                    type="button"
-                    className={`${styles.thumbnail} ${
-                    selectedImage === index ? styles.thumbnailActive : ""
-                    }`}
-                    onClick={() => setSelectedImage(index)}
-                    aria-label={`Ver imagen ${index + 1} de ${product.title}`}
-                >
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src={thumb} alt="" />
-                </button>
-                ))}
-            </div>
-
-            <div className={styles.mainImageWrapper}>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                src={gallery[selectedImage]}
-                alt={product.title}
-                className={styles.mainImage}
-                />
-            </div>
-            </div>
-
-            <div className={styles.info}>
-            <h1 className={styles.title}>{product.title}</h1>
-            <p className={styles.price}>${product.price.toFixed(2)}</p>
-
-            <p className={styles.description}>{product.description}</p>
-
-            <div className={styles.variants}>
-                {MOCK_VARIANTS.map((variant) => (
-                <button
-                    key={variant}
-                    type="button"
-                    className={`${styles.variantPill} ${
-                    selectedVariant === variant ? styles.variantPillActive : ""
-                    }`}
-                    onClick={() => setSelectedVariant(variant)}
-                >
-                    {variant}
-                </button>
-                ))}
-            </div>
-
-            {/* El botón Comprar es un enlace; cámbialo por la URL de tu
-                checkout/carro real cuando la tengas. */}
-            <Link href="/contacto" className={styles.buyButton}>
-                Comprar
+            <Link href="/pages/tienda" className={styles.backLink}>
+                ← Volver a la tienda
             </Link>
+
+            <div className={styles.content}>
+                <div className={styles.gallery}>
+                    <div className={styles.thumbnails}>
+                        {gallery.map((thumb, index) => (
+                        <button
+                            key={index}
+                            type="button"
+                            className={`${styles.thumbnail} ${
+                            selectedImage === index ? styles.thumbnailActive : ""
+                            }`}
+                            onClick={() => setSelectedImage(index)}
+                            aria-label={`Ver imagen ${index + 1} de ${product.title}`}
+                        >
+                            {/* eslint-disable-next-line @next/next/no-img-element */}
+                            <img src={thumb} alt="" />
+                        </button>
+                    ))}
+                    </div>
+
+                    <div className={styles.mainImageWrapper}>
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img
+                        src={gallery[selectedImage]}
+                        alt={product.title}
+                        className={styles.mainImage}
+                        />
+                    </div>
+                </div>
+
+                <div className={styles.info}>
+                    <h2>{product.title}</h2>
+                    <p className={styles.price}>${product.price.toFixed(2)}</p>
+                    <p className={styles.description}>{product.description}</p>
+                    
+                    <div className={styles.variants}>
+                        {MOCK_VARIANTS.map((variant) => (
+                        <button
+                            key={variant}
+                            type="button"
+                            className={`${styles.variantPill} ${
+                            selectedVariant === variant ? styles.variantPillActive : ""
+                            }`}
+                            onClick={() => setSelectedVariant(variant)}
+                        >
+                        {variant}
+                        </button>
+                    ))}
+                    </div>
+                    
+                    {/* cambiar por la URL del checkout/carro real. */}
+                    <Link href="/contacto" className="buttonFeatured">
+                        Comprar
+                    </Link>
+                </div>
             </div>
-        </div>
         </div>
     );
 }
