@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import styles from "./fichacss.module.css";
 
+
 interface ProductDetail {
     id: number;
     title: string;

@@ -234,16 +234,29 @@ export default function TiendaPage() {
     
                 {totalPages > 1 && (
                 <div className={styles.pagination}>
-                    {Array.from({ length: totalPages }).map((_, index) => (
                     <button
-                        key={index}
-                        className={`${styles.dot} ${
-                        currentPage === index ? styles.dotActive : ""
-                        }`}
-                        onClick={() => setCurrentPage(index)}
-                        aria-label={`Ir a la página ${index + 1}`}
-                    />
-                    ))}
+                        className={styles.pageArrow}
+                        onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 0))}
+                        disabled={currentPage === 0}
+                        aria-label="Página anterior"
+                    >
+                        ‹
+                    </button>
+
+                    <span className={styles.pageNumber}>
+                        Página {currentPage + 1} de {totalPages}
+                    </span>
+
+                    <button
+                        className={styles.pageArrow}
+                        onClick={() =>
+                            setCurrentPage((prev) => Math.min(prev + 1, totalPages - 1))
+                        }
+                        disabled={currentPage === totalPages - 1}
+                        aria-label="Página siguiente"
+                    >
+                        ›
+                    </button>
                 </div>
                 )}
             </>
