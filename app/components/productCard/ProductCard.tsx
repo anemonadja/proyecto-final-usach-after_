@@ -36,7 +36,7 @@ export default function ProductCard({
       <h3 className={styles.title}>{title}</h3>
       <p className={styles.price}>${price.toFixed(2)}</p>
 
-      <Link href={`/pages/tienda/producto/${id}`} className={styles.buyButton}>
+      <Link href={`/pages/tienda/producto/${id}`} className="buttonSecondary">
         Comprar
       </Link>
     </div>

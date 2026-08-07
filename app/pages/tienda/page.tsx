@@ -138,9 +138,9 @@ export default function TiendaPage() {
             </button>
             
             <div className={styles.heroContent}>
-                <h1 className={styles.heroTitle}>{heroSlides[heroIndex].title}</h1>
+                <h2 className={styles.heroTitle} >{heroSlides[heroIndex].title}</h2>
                 <p className={styles.heroText}>{heroSlides[heroIndex].text}</p>
-                <button className={styles.heroButton}>Ver productos</button>
+                <button className="buttonFeatured">Ver productos</button>
             </div>
     
             <button
@@ -247,7 +247,7 @@ export default function TiendaPage() {
             <p className={styles.ctaText}>
             Escríbenos y te ayudamos a encontrar el producto ideal para ti.
             </p>
-            <Link href="/pages/contacto" className={styles.ctaButton}>
+            <Link href="/pages/contacto" className="buttonFeatured">
                 Contáctanos
             </Link>
         </section>
