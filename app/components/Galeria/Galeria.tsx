@@ -69,7 +69,6 @@ export default function Galeria({ productId = 1 }: GaleriaProps) {
                         sizes="(max-width: 768px) 90vw, 42vw"
                     />
                     <p className={styles.caption}>
-                        Reemplaza este texto por la descripción de la imagen.
                     </p>
                 </div>
 
@@ -83,7 +82,6 @@ export default function Galeria({ productId = 1 }: GaleriaProps) {
                         sizes="(max-width: 768px) 90vw, 24vw"
                     />
                     <p className={styles.caption}>
-                        Reemplaza este texto por la descripción de la imagen.
                     </p>
                 </div>
 
@@ -118,7 +116,6 @@ export default function Galeria({ productId = 1 }: GaleriaProps) {
                         sizes="(max-width: 800px) 90vw, 47vw"
                     />
                     <p className={styles.caption}>
-                        Reemplaza este texto por la descripción de la imagen.
                     </p>
                 </div>
 
