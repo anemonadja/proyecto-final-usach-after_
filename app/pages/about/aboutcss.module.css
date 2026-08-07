@@ -1,7 +1,7 @@
 .about {
   width: 100%;
   padding: clamp(3rem, 7vw, 5rem) clamp(1.25rem, 7vw, 5.25rem);
-  background-color: #ffffff;
+  background-color: var(--color-white);
 }
 
 .aboutGrid {

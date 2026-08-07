@@ -1,38 +1,37 @@
-/* CTA */
 .cta {
-  background-image: url('/assets/e.png');
-  background-size: cover;
-  padding: 5rem 4rem;
-  text-align: center;
+    background-image: url('/assets/e.png');
+    background-size: cover;
+    padding: 5rem 4rem;
+    text-align: center;
 }
- 
+
 .ctaTitle {
-  color: #ffffff;
-  font-size: 1.75rem;
-  font-weight: 700;
-  margin: 0 0 0.75rem;
+    color: var(--color-white);
+    font-size: var(--font-size-h2);
+    font-weight: var(--font-weight-bold);
+    margin: 0 0 0.75rem;
 }
- 
+
 .ctaText {
-  color: #e0e0e0;
-  font-size: 0.95rem;
-  margin: 0 0 3rem;
+    color: var(--color-grey-light);
+    font-size: var(--font-size-medium);
+    margin: 0 0 3rem;
 }
- 
+
 .ctaButton {
-  display: inline-block;
-  background-color: #1a1a1a;
-  color: #ffffff;
-  border: none;
-  padding: 1.75rem 2rem;
-  font-size: 0.85rem;
-  font-weight: 600;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  cursor: pointer;
-  text-decoration: none;
+    display: inline-block;
+    background-color: var(--color-black);
+    color: var(--color-white);
+    border: none;
+    padding: 1.75rem 2rem;
+    font-size: var(--font-size-medium);
+    font-weight: var(--font-weight-semibold);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-decoration: none;
 }
- 
+
 .ctaButton:hover {
-  background-color: #000000;
+    background-color: var(--color-black);
 }

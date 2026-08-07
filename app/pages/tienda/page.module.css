@@ -97,7 +97,7 @@
   border-color: var(--color-grey-dark2);
 }
 
-.favoriteFilter {
+.sortButton {
   background: none;
   border: 1px solid var(--color-grey-light2);
   border-radius: 50%;
@@ -106,15 +106,22 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: var(--font-size-h3);
   cursor: pointer;
   color: var(--color-black);
 }
 
-.favoriteFilterActive {
+.sortButtonActive {
   background-color: var(--color-grey-dark2);
   color: var(--color-white);
   border-color: var(--color-grey-dark);
+}
+
+.sortIcon {
+  transition: transform 0.2s ease;
+}
+
+.sortIconFlipped {
+  transform: rotate(180deg);
 }
 
 .statusText {

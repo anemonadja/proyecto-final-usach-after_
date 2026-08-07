@@ -1,5 +1,4 @@
 "use client";
-import type { Metadata } from 'next';
 import { useEffect, useState } from "react";
 import Link from 'next/link';
 import ProductCard from "@/app/components/productCard/ProductCard"
@@ -31,22 +30,13 @@ const heroSlides = [
     },
 ];
 
-/*ESTA PARTE NO SE VISUALIZARÁ PORQUE SE ESTÁ USANDO EL METADATA DE LA PÁGINA LAYOUT, 
-PERO SE DEJA POR SI SE QUIERE USAR EN EL FUTURO
-
-export const metadata: Metadata = {
-title: 'Tienda - Plantilla e-commerce para creativos',
-description: 'Explora nuestro catálogo completo de productos'
-};
-
-*/
+type SortOrder = "asc" | "desc" | null;
 
 export default function TiendaPage() {
     const [products, setProducts] = useState<Product[]>([]);
     const [categories, setCategories] = useState<string[]>([]);
     const [selectedCategory, setSelectedCategory] = useState<string>("todos");
-    const [favorites, setFavorites] = useState<Set<number>>(new Set());
-    const [showOnlyFavorites, setShowOnlyFavorites] = useState(false);
+    const [sortOrder, setSortOrder] = useState<SortOrder>(null);
     const [currentPage, setCurrentPage] = useState(0);
     const [heroIndex, setHeroIndex] = useState(0);
     const [isLoading, setIsLoading] = useState(true);
@@ -84,30 +74,30 @@ export default function TiendaPage() {
     fetchData();
     }, []);
 
-    const toggleFavorite = (id: number) => {
-        setFavorites((prev) => {
-        const next = new Set(prev);
-        if (next.has(id)) {
-            next.delete(id);
-        } else {
-            next.add(id);
-        }
-        return next;
+    const toggleSortOrder = () => {
+        setSortOrder((prev) => {
+            if (prev === null) return "desc";
+            if (prev === "desc") return "asc";
+            return null;
         });
+        setCurrentPage(0);
     };
 
     const filteredProducts = products.filter((product) => {
-        const matchesCategory =
-        selectedCategory === "todos" || product.category === selectedCategory;
-        const matchesFavorite = !showOnlyFavorites || favorites.has(product.id);
-        return matchesCategory && matchesFavorite;
+        return selectedCategory === "todos" || product.category === selectedCategory;
+    });
+
+    const sortedProducts = [...filteredProducts].sort((a, b) => {
+        if (sortOrder === "asc") return a.price - b.price;
+        if (sortOrder === "desc") return b.price - a.price;
+        return 0;
     });
 
     const totalPages = Math.max(
         1,
-        Math.ceil(filteredProducts.length / PRODUCTS_PER_PAGE)
+        Math.ceil(sortedProducts.length / PRODUCTS_PER_PAGE)
     );
-    const paginatedProducts = filteredProducts.slice(
+    const paginatedProducts = sortedProducts.slice(
         currentPage * PRODUCTS_PER_PAGE,
         currentPage * PRODUCTS_PER_PAGE + PRODUCTS_PER_PAGE
     );
@@ -124,6 +114,13 @@ export default function TiendaPage() {
     const handleNextHero = () => {
         setHeroIndex((prev) => (prev === heroSlides.length - 1 ? 0 : prev + 1));
     };
+
+    const sortLabel =
+        sortOrder === "asc"
+            ? "Precio: menor a mayor"
+            : sortOrder === "desc"
+            ? "Precio: mayor a menor"
+            : "Ordenar por precio";
 
     return (
         <main>
@@ -183,16 +180,30 @@ export default function TiendaPage() {
             ))}
     
             <button
-                className={`${styles.favoriteFilter} ${
-                showOnlyFavorites ? styles.favoriteFilterActive : ""
+                className={`${styles.sortButton} ${
+                sortOrder ? styles.sortButtonActive : ""
                 }`}
-                onClick={() => {
-                setShowOnlyFavorites((prev) => !prev);
-                setCurrentPage(0);
-                }}
-                aria-label="Mostrar solo favoritos"
+                onClick={toggleSortOrder}
+                aria-label={sortLabel}
+                title={sortLabel}
             >
-                {showOnlyFavorites ? "♥" : "♡"}
+                <svg
+                    className={`${styles.sortIcon} ${
+                        sortOrder === "asc" ? styles.sortIconFlipped : ""
+                    }`}
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <path
+                        d="M2 3H14L9.5 8.5V13L6.5 11.5V8.5L2 3Z"
+                        stroke="currentColor"
+                        strokeWidth="1.3"
+                        strokeLinejoin="round"
+                    />
+                </svg>
             </button>
             </div>
     
@@ -211,8 +222,6 @@ export default function TiendaPage() {
                     title={product.title}
                     price={product.price}
                     image={product.image}
-                    isFavorite={favorites.has(product.id)}
-                    onToggleFavorite={toggleFavorite}
                     />
                 ))}
                 </div>
@@ -254,4 +263,3 @@ export default function TiendaPage() {
         </main>
     );
 }
-

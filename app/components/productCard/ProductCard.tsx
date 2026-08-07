@@ -6,8 +6,6 @@ interface ProductCardProps {
   title: string;
   price: number;
   image: string;
-  isFavorite: boolean;
-  onToggleFavorite: (id: number) => void;
 }
 
 export default function ProductCard({
@@ -15,19 +13,9 @@ export default function ProductCard({
   title,
   price,
   image,
-  isFavorite,
-  onToggleFavorite,
 }: ProductCardProps) {
   return (
     <div className={styles.card}>
-      <button
-        className={styles.favoriteButton}
-        onClick={() => onToggleFavorite(id)}
-        aria-label={isFavorite ? "Quitar de favoritos" : "Agregar a favoritos"}
-      >
-        {isFavorite ? "♥" : "♡"}
-      </button>
-
       <div className={styles.imageWrapper}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src={image} alt={title} className={styles.image} />

@@ -14,19 +14,6 @@
   transform: translateY(-2px);
 }
 
-.favoriteButton {
-  position: absolute;
-  top: 0.75rem;
-  right: 0.75rem;
-  background: none;
-  border: none;
-  font-size: 1.25rem;
-  line-height: 1;
-  cursor: pointer;
-  color: #1a1a1a;
-  z-index: 1;
-}
-
 .imageWrapper {
   width: 100%;
   aspect-ratio: 1 / 1;
