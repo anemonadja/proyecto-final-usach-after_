@@ -153,8 +153,8 @@
     font-size: 0.95rem;
     }
 
-    /* Responsive */
-    @media (max-width: 900px) {
+/* Responsive */
+@media (max-width: 900px) {
     .content {
         flex-direction: column;
     }

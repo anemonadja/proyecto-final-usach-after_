@@ -1,5 +1,5 @@
 import Hero from "./components/Hero/Hero";
-import Bienvenida from "./components/Bienvenida";
+import Bienvenida from "./components/Bienvenida/Bienvenida";
 import Galeria from "./components/Galeria/Galeria";
 
 export default function Home() {

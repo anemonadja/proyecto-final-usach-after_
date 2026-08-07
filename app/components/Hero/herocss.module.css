@@ -70,7 +70,7 @@
     right:30px;
     }
 
-@media (max-width:768px){
+@media (max-width:600px){
     .content {
     top: 32%;
     left: 8%;

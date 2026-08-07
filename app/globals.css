@@ -4,14 +4,13 @@
 
 html,
 body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   margin: 0;
   padding: 0;
   color: var(--color-black);
   background-color: var(--color-white);
-}
-
-h1 {
-
 }
 
 :root {
@@ -19,7 +18,7 @@ h1 {
   --color-white: #ffffff;
   --color-grey-light: #d3d3d3;
   --color-grey-light2: #a2a2a2;
-  --color-orange: #b33609;
+  --color-select: #46c587;
   --color-grey-mid: #828282;
   --color-grey-dark: #4a4a4a;
   --color-grey-dark2: #282828;
@@ -30,6 +29,8 @@ h1 {
   --font-size-h2: clamp(1.75rem, 3vw, 2.25rem);
   --font-size-h3: clamp(1.25rem, 2vw, 1.5rem);
   --font-size-body: 1rem;
+  --font-size-medium: 0.85rem;
+  --font-size-small: 0.7rem;
   --font-size-button: 1rem;
   --font-size-button-featured: clamp(1rem, 1.5vw, 1.125rem);
 
@@ -43,10 +44,7 @@ h1 {
 }
 
 
-h1,
-h2,
-h3,
-p {
+h1, h2, h3, p {
   margin-top: 0;
 }
 
@@ -80,10 +78,6 @@ p {
   line-height: var(--line-height-body);
 }
 
-/* Estilos compartidos por todos los botones */
-
-.buttonFeatured,
-.buttonPrimary,
 .buttonSecondary {
   display: inline-flex;
   justify-content: center;
@@ -100,20 +94,18 @@ p {
     transform 0.2s ease;
 }
 
-/* Llamado principal del hero */
-
 .buttonFeatured {
   min-height: 3.5rem;
   padding: 1rem 2rem;
   border: 2px solid var(--color-black);
+  border-radius: 10px;
   font-size: var(--font-size-button-featured);
   font-weight: var(--font-weight-bold);
-  line-height: 1.2;
+  line-height: var(--line-height-heading);
+  text-decoration: none;
   color: var(--color-white);
   background-color: var(--color-black);
 }
-
-/* Acción principal: Comprar, Enviar, Contactar */
 
 .buttonPrimary {
   min-height: 3rem;
@@ -121,12 +113,11 @@ p {
   border: 2px solid var(--color-black);
   font-size: var(--font-size-button);
   font-weight: var(--font-weight-semibold);
-  line-height: 1.2;
+  line-height: var(--line-height-heading);
+  text-decoration: none;
   color: var(--color-white);
   background-color: var(--color-black);
 }
-
-/* Acción secundaria: Ver producto, Conocer más */
 
 .buttonSecondary {
   min-height: 3rem;
@@ -134,7 +125,8 @@ p {
   border: 2px solid var(--color-black);
   font-size: var(--font-size-button);
   font-weight: var(--font-weight-semibold);
-  line-height: 1.2;
+  line-height: var(--line-height-heading);
+  text-decoration: none;
   color: var(--color-black);
   background-color: transparent;
 }
@@ -142,7 +134,7 @@ p {
 .buttonFeatured:hover,
 .buttonPrimary:hover {
   color: var(--color-black);
-  background-color: transparent;
+  background-color: rgba(255, 255, 255, 0.097);
 }
 
 .buttonSecondary:hover {
@@ -155,83 +147,4 @@ p {
 .buttonSecondary:focus-visible {
   outline: 3px solid #6c63ff;
   outline-offset: 3px;
-}
-
-
-/* =========================
-  BIENVENIDA
-========================= */
-
-.bienvenida {
-  padding: 48px 20px;
-  color: var(--color-negro);
-  text-align: center;
-  background-color: var(--color-blanco);
-}
-
-.bienvenida__titulo {
-  margin-bottom: 14px;
-  font-size: 30px;
-  font-weight: 400;
-}
-
-.bienvenida__texto {
-  width: min(700px, 100%);
-  margin: 0 auto;
-  color: var(--color-gris);
-  font-size: 14px;
-  line-height: 1.7;
-}
-
-/* =========================
-  FOOTER
-========================= */
-
-.footer {
-  padding: 22px 20px;
-  color: rgba(255, 255, 255, 0.75);
-  text-align: center;
-  background-color: var(--color-gris);
-}
-
-.footer__texto {
-  font-size: 12px;
-}
-
-/* =========================
-  TABLET Y MENÚ MÓVIL
-========================= */
-
-@media (max-width: 800px) {
-
-  .pilares__contenedor {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .pilar:nth-child(2) {
-    border-right: none;
-  }
-
-  .pilar:nth-child(-n + 2) {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.13);
-  }
-}
-
-/* =========================
-CELULAR
-========================= */
-
-@media (max-width: 520px) {
-  .pilares__contenedor {
-    grid-template-columns: 1fr;
-  }
-
-  .pilar {
-    border-right: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.13);
-  }
-
-  .pilar:last-child {
-    border-bottom: none;
-  }
 }

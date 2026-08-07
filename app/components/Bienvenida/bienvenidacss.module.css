@@ -1,0 +1,14 @@
+.bienvenida {
+    padding: 48px 20px;
+    text-align: center;
+}
+
+.bienvenida__titulo {
+    margin-bottom: 14px;
+}
+
+.bienvenida__texto {
+    width: min(700px, 100%);
+    margin: 0 auto;
+    line-height: var(--line-height-body);
+}

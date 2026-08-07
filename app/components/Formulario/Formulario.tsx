@@ -130,7 +130,7 @@ export default function Formulario() {
         </span>
       </div>
 
-      <button type="submit" className={styles.boton}>
+      <button type="submit" className="buttonFeatured">
         Enviar
       </button>
 

@@ -1,4 +1,5 @@
 import styles from "./footercss.module.css";
+import Link from "next/link";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -7,31 +8,31 @@ export default function Footer() {
     <footer className={styles.footer}>
       <div className={styles.content}>
         <nav className={styles.navigation} aria-label="Enlaces del pie de página">
-          <h2 className={styles.title}>¡Permanece al día a través de nuestras redes!</h2>
+          <h3 className={styles.title} >¡Permanece al día a través de nuestras redes!</h3>
 
           <ul className={styles.linkList}>
             <li>
-              <a href="#" className={styles.link}>
+              <Link href="#" className={styles.link}>
                 Colaboraciones
-              </a>
+              </Link>
             </li>
 
             <li>
-              <a href="#" className={styles.link}>
+              <Link href="#" className={styles.link}>
                 Sitios amigos
-              </a>
+              </Link>
             </li>
 
             <li>
-              <a href="#" className={styles.link}>
+              <Link href="#" className={styles.link}>
                 Blog y actividades
-              </a>
+              </Link>
             </li>
           </ul>
         </nav>
 
         <div className={styles.socialNetworks}>
-          <a
+          <Link
             href="https://www.facebook.com/"
             className={styles.socialLink}
             aria-label="Visitar Facebook"
@@ -50,9 +51,9 @@ export default function Footer() {
                 strokeLinejoin="round"
               />
             </svg>
-          </a>
+          </Link>
 
-          <a
+          <Link
             href="https://www.instagram.com/"
             className={styles.socialLink}
             aria-label="Visitar Instagram"
@@ -83,9 +84,9 @@ export default function Footer() {
               />
               <circle cx="17.5" cy="6.5" r="1" fill="currentColor" />
             </svg>
-          </a>
+          </Link>
 
-          <a
+          <Link
             href="https://www.youtube.com/"
             className={styles.socialLink}
             aria-label="Visitar YouTube"
@@ -114,12 +115,12 @@ export default function Footer() {
                 strokeLinejoin="round"
               />
             </svg>
-          </a>
+          </Link>
         </div>
 
         <div className={styles.legal}>
           <p>Tienda Temporal © {currentYear}</p>
-          <a href="https://www.tiendatemporal.cl">www.tiendatemporal.cl</a>
+          <Link className={styles.legal} href="https://www.tiendatemporal.cl">www.tiendatemporal.cl</Link>
         </div>
       </div>
     </footer>
