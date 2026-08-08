@@ -120,7 +120,7 @@ export default function Footer() {
 
         <div className={styles.legal}>
           <p>Tienda Temporal © {currentYear}</p>
-          <Link className={styles.legal} href="https://www.tiendatemporal.cl">www.tiendatemporal.cl</Link>
+          <Link className={styles.legal} href="https://proyecto-final-usach-after.vercel.app/">www.tiendatemporal.cl</Link>
         </div>
       </div>
     </footer>

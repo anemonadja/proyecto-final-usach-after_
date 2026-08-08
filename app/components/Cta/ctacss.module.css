@@ -13,7 +13,7 @@
 }
 
 .ctaText {
-    color: var(--color-grey-light);
+    color: var(--color-white);
     font-size: var(--font-size-medium);
     margin: 0 0 3rem;
 }
