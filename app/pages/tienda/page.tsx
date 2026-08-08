@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import Link from 'next/link';
 import ProductCard from "@/app/components/productCard/ProductCard"
 import styles from "./page.module.css";
+import Cta from "../../components/Cta/Cta";
+import productsData from "@/app/data/products.json";
 
 interface Product {
     id: number;
@@ -42,39 +44,15 @@ export default function TiendaPage() {
     const [sortOrder, setSortOrder] = useState<SortOrder>(null);
     const [currentPage, setCurrentPage] = useState(0);
     const [heroIndex, setHeroIndex] = useState(0);
-    const [isLoading, setIsLoading] = useState(true);
-    const [error, setError] = useState<string | null>(null);
 
     useEffect(() => {
-        async function fetchData() {
-            try {
-                setIsLoading(true);
-                setError(null);
+        const data = productsData as Product[];
+        const uniqueCategories = Array.from(
+            new Set(data.map((product) => product.category))
+        );
 
-        const [productsRes, categoriesRes] = await Promise.all([
-            fetch("https://fakestoreapi.com/products"),
-            fetch("https://fakestoreapi.com/products/categories"),
-            ]);
-
-            if (!productsRes.ok || !categoriesRes.ok) {
-            throw new Error("No se pudo obtener la información de la tienda.");
-            }
-
-        const productsData: Product[] = await productsRes.json();
-        const categoriesData: string[] = await categoriesRes.json();
-
-                setProducts(productsData);
-                setCategories(categoriesData);
-                } catch (err) {
-                    setError(
-                    err instanceof Error ? err.message : "Ocurrió un error inesperado."
-                    );
-                } finally {
-                    setIsLoading(false);
-                }
-        }
-
-    fetchData();
+        setProducts(data);
+        setCategories(uniqueCategories);
     }, []);
 
     const toggleSortOrder = () => {
@@ -214,72 +192,53 @@ export default function TiendaPage() {
             </button>
             </div>
     
-            {isLoading && (
-            <p className={styles.statusText}>Cargando productos...</p>
-            )}
-            {error && <p className={styles.statusText}>{error}</p>}
-    
-            {!isLoading && !error && (
-            <>
-                <div className={styles.grid}>
-                {paginatedProducts.map((product) => (
-                    <ProductCard
-                    key={product.id}
-                    id={product.id}
-                    title={product.title}
-                    price={product.price}
-                    image={product.image}
-                    />
-                ))}
-                </div>
-    
-                {paginatedProducts.length === 0 && (
-                <p className={styles.statusText}>
-                    No encontramos productos con estos filtros.
-                </p>
-                )}
-    
-                {totalPages > 1 && (
-                <div className={styles.pagination}>
-                    <button
-                        className={styles.pageArrow}
-                        onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 0))}
-                        disabled={currentPage === 0}
-                        aria-label="Página anterior"
-                    >
-                        ‹
-                    </button>
+            <div className={styles.grid}>
+            {paginatedProducts.map((product) => (
+                <ProductCard
+                key={product.id}
+                id={product.id}
+                title={product.title}
+                price={product.price}
+                image={product.image}
+                />
+            ))}
+            </div>
 
-                    <span className={styles.pageNumber}>
-                        Página {currentPage + 1} de {totalPages}
-                    </span>
-
-                    <button
-                        className={styles.pageArrow}
-                        onClick={() =>
-                            setCurrentPage((prev) => Math.min(prev + 1, totalPages - 1))
-                        }
-                        disabled={currentPage === totalPages - 1}
-                        aria-label="Página siguiente"
-                    >
-                        ›
-                    </button>
-                </div>
-                )}
-            </>
-            )}
-        </section>
-    
-        {/* CTA */}
-        <section className={styles.cta}>
-            <h2 className={styles.ctaTitle}>¿No encontraste lo que buscabas?</h2>
-            <p className={styles.ctaText}>
-            Escríbenos y te ayudamos a encontrar el producto ideal para ti.
+            {paginatedProducts.length === 0 && (
+            <p className={styles.statusText}>
+                No encontramos productos con estos filtros.
             </p>
-            <Link href="/pages/contacto" className="buttonFeatured">
-                Contáctanos
-            </Link>
+            )}
+
+            {totalPages > 1 && (
+            <div className={styles.pagination}>
+                <button
+                    className={styles.pageArrow}
+                    onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 0))}
+                    disabled={currentPage === 0}
+                    aria-label="Página anterior"
+                >
+                    ‹
+                </button>
+
+                <span className={styles.pageNumber}>
+                    Página {currentPage + 1} de {totalPages}
+                </span>
+
+                <button
+                    className={styles.pageArrow}
+                    onClick={() =>
+                        setCurrentPage((prev) => Math.min(prev + 1, totalPages - 1))
+                    }
+                    disabled={currentPage === totalPages - 1}
+                    aria-label="Página siguiente"
+                >
+                    ›
+                </button>
+            </div>
+            )}
         </section>
+        <Cta />
         </main>
     );
 }

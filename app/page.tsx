@@ -2,6 +2,7 @@ import Hero from "./components/Hero/Hero";
 import Bienvenida from "./components/Bienvenida/Bienvenida";
 import Galeria from "./components/Galeria/Galeria";
 import Detalles from "./components/Detalles/Detalles";
+import Cta from "./components/Cta/Cta";
 
 const leftItems = [
   {
@@ -53,6 +54,7 @@ export default function Home() {
         leftItems={leftItems}
         rightItems={rightItems}
       />
+      <Cta />
     </>
   );
 }

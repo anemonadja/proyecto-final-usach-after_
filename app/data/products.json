@@ -1,0 +1,119 @@
+[
+    {
+        "id": 1,
+        "title": "Septum SELKIE",
+        "price": 180000,
+        "description": "Septum en bronce.",
+        "category": "septum",
+        "image": "/assets/products/p1.png",
+        "images": [
+        "/assets/products/p1.png",
+        "/assets/products/p2.png"
+        ]
+    },
+    {
+        "id": 2,
+        "title": "Septum PROTOS",
+        "price": 200000,
+        "description": "Septum en plata 950.",
+        "category": "septum",
+        "image": "/assets/products/q1.png",
+        "images": [
+        "/assets/products/q1.png",
+        "/assets/products/q2.png",
+        "/assets/products/q3.png"
+        ]
+    },
+    {
+        "id": 3,
+        "title": "Septum NEREO",
+        "price": 229000,
+        "description": "Septum en plata 950. Tiempo de confección: 8 semanas",
+        "category": "septum",
+        "image": "/assets/products/r1.png",
+        "images": [
+        "/assets/products/r1.png",
+        "/assets/products/r3.png",
+        "/assets/products/r4.png"
+        ]
+    },
+    {
+        "id": 4,
+        "title": "Septum TETI'S TEARS",
+        "price": 92500,
+        "description": "Septum en plata 950. Tiempo de confección: 4 semanas",
+        "category": "septum",
+        "image": "/assets/products/t2.png",
+        "images": [
+        "/assets/products/t2.png",
+        "/assets/products/t3.png"
+        ]
+    },
+    {
+        "id": 5,
+        "title": "Septum SERAPH",
+        "price": 180500,
+        "description": "Septum en plata 950. Tiempo de confección: 4 semanas",
+        "category": "septum",
+        "image": "/assets/products/u1.png",
+        "images": [
+        "/assets/products/u1.png",
+        "/assets/products/u2.png",
+        "/assets/products/u3.png"
+        ]
+    },
+    {
+        "id": 6,
+        "title": "Septum MILLEPORA",
+        "price": 75000,
+        "description": "Septum en plata 950. Tiempo de confección: 4 semanas",
+        "category": "septum",
+        "image": "/assets/products/v2.png",
+        "images": [
+        "/assets/products/v2.png",
+        "/assets/products/v3.png",
+        "/assets/products/v4.png"
+        ]
+    },
+    {
+        "id": 7,
+        "title": "Septum DORIDE",
+        "price": 256000,
+        "description": "Septum en plata Bronce. Tiempo de confección: 8 semanas",
+        "category": "septum",
+        "image": "/assets/products/w1.png",
+        "images": [
+        "/assets/products/w1.png",
+        "/assets/products/w2.png"
+        ]
+    },
+
+    {
+        "id": 8,
+        "title": "Lentes GLAUKE",
+        "price": 240000,
+        "description": "Lentes en resina. Tiempo de confección: 4 semanas",
+        "category": "lentes",
+        "image": "/assets/products/x1.png",
+        "images": [
+        "/assets/products/x1.png",
+        "/assets/products/x2.png",
+        "/assets/products/x3.png",
+        "/assets/products/x4.png",
+        "/assets/products/x5.png"
+        ]
+    },
+    {
+        "id": 9,
+        "title": "Collar CYMO",
+        "price": 452500,
+        "description": "Collar en resina. Tiempo de confección: 4 semanas",
+        "category": "collar",
+        "image": "/assets/products/y1.png",
+        "images": [
+        "/assets/products/y1.png",
+        "/assets/products/y2.png",
+        "/assets/products/y3.png"
+        ]
+    }
+]

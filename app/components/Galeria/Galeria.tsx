@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./galeriacss.module.css";
+import productsData from "@/app/data/products.json";
 
 interface GaleriaProducto {
     id: number;
@@ -12,36 +13,17 @@ interface GaleriaProducto {
 }
 
 interface GaleriaProps {
-    /** ID del producto de Fake Store API que se muestra en el bloque verde */
+    /** ID del producto (de tu products.json) que se muestra en el bloque destacado */
     productId?: number;
 }
 
 export default function Galeria({ productId = 1 }: GaleriaProps) {
     const [producto, setProducto] = useState<GaleriaProducto | null>(null);
-    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-        async function fetchProducto() {
-            try {
-                setIsLoading(true);
-                const res = await fetch(
-                    `https://fakestoreapi.com/products/${productId}`
-                );
-
-                if (!res.ok) {
-                    throw new Error("No se pudo obtener el producto.");
-                }
-
-                const data: GaleriaProducto = await res.json();
-                setProducto(data);
-            } catch (err) {
-                console.error(err);
-            } finally {
-                setIsLoading(false);
-            }
-        }
-
-        fetchProducto();
+        const data = productsData as GaleriaProducto[];
+        const found = data.find((p) => p.id === productId);
+        setProducto(found ?? null);
     }, [productId]);
 
     return (

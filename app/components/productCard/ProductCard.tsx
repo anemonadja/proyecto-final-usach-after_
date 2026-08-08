@@ -1,5 +1,6 @@
 import Link from "next/link";
 import styles from "./productcardcss.module.css";
+import { formatCLP } from "@/app/utils/formatPrice";
 
 interface ProductCardProps {
   id: number;
@@ -22,7 +23,7 @@ export default function ProductCard({
       </div>
 
       <h3 className={styles.title}>{title}</h3>
-      <p className={styles.price}>${price.toFixed(2)}</p>
+      <p className={styles.price}>{formatCLP(price)}</p>
 
       <Link href={`/pages/tienda/producto/${id}`} className="buttonSecondary">
         Ver más

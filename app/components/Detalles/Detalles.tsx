@@ -60,9 +60,6 @@ export interface DetalleItem {
             </div>
         </div>
 
-        <Link href="/pages/contacto" className={`buttonFeatured ${styles.cta}`}>
-            {ctaText}
-        </Link>
         </section>
     );
 }
