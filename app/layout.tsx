@@ -11,7 +11,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-metadataBase: new URL('https://cinemateca.vercel.app'),
+metadataBase: new URL('https://proyecto-final-usach-seven.vercel.app/'),
 title: 'Plantilla e-commerce para creativos',
 description: 'Generado por Anemona Lab & Wabi - Estudio Creativo',
 openGraph: {
@@ -20,7 +20,7 @@ openGraph: {
   images: ['/og-image.png'],
   locale: 'es_CL',
   type: 'website',
-  url: 'https://cinemateca.vercel.app',
+  url: 'https://proyecto-final-usach-seven.vercel.app/',
   siteName: 'Plantilla e-commerce para creativos', 
   },
 };

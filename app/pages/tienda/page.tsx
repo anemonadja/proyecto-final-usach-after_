@@ -19,14 +19,17 @@ const heroSlides = [
     {
         title: "Encuentra tu estilo",
         text: "Explora nuestra colección completa de productos, pensada para cada ocasión.",
+        image: "/assets/s5.png",
     },
     {
         title: "Nuevos lanzamientos",
         text: "Descubre las últimas incorporaciones a nuestro catálogo.",
+        image: "/assets/s4.png",
     },
     {
         title: "Ofertas exclusivas",
         text: "Aprovecha descuentos únicos por tiempo limitado.",
+        image: "/assets/s1.png",
     },
 ];
 
@@ -125,7 +128,11 @@ export default function TiendaPage() {
     return (
         <main>
         {/* Hero */}
-        <section className={styles.hero}>
+        <section
+            className={styles.hero}
+            style={{ backgroundImage: `url(${heroSlides[heroIndex].image})` }}
+        >
+            <div className={styles.heroOverlay} />
             <button
             className={`${styles.heroArrow} ${styles.heroArrowLeft}`}
             onClick={handlePrevHero}

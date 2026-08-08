@@ -28,26 +28,13 @@ export default function About() {
             </p>
 
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
-              vulputate libero et velit interdum, ac aliquet odio mattis. Class
-              aptent taciti sociosqu ad litora torquent per conubia nostra, per
-              inceptos himenaeos. Curabitur tempus urna at turpis condimentum
-              lobortis.
+              Artista visual y diseñador 3D. Su trabajo explora el encuentro entre tecnología, cuerpo y ornamentación mediante joyas digitales de formas orgánicas, inspiradas en la naturaleza, la arquitectura y los imaginarios del futuro.
             </p>
           </div>
 
           <div className={styles.description}>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
-              vulputate libero et velit interdum, ac aliquet odio mattis. Class
-              aptent taciti sociosqu ad litora torquent per conubia nostra, per
-              inceptos himenaeos. Curabitur tempus urna at turpis condimentum
-              lobortis. Ut commodo efficitur neque. Lorem ipsum dolor sit amet,
-              consectetur adipiscing elit. Nunc vulputate libero et velit
-              interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad
-              litora torquent per conubia nostra, per inceptos himenaeos.
-              Curabitur tempus urna at turpis condimentum lobortis. Ut commodo
-              efficitur neque.
+              Su proceso comienza con dibujos, fotografías y pequeños objetos encontrados que luego transforma mediante modelado e impresión 3D. Cada pieza se desarrolla como una escultura portátil, combinando experimentación digital, materiales reciclados y terminaciones realizadas a mano. Sus colecciones buscan cuestionar los límites entre arte, diseño y tecnología, proponiendo nuevas maneras de relacionarnos con los objetos que llevamos sobre el cuerpo. Actualmente desarrolla piezas por encargo, colaboraciones con artistas escénicos y colecciones de edición limitada desde su estudio en Santiago de Chile.
             </p>
           </div>
 
