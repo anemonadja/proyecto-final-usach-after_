@@ -16,7 +16,7 @@
 
 .descripcion {
     font-size: 1rem;
-    color: #555;
+    color: var(--color-grey-mid);
     margin-bottom: 40px;
     max-width: 500px;
 }

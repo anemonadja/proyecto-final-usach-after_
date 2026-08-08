@@ -17,7 +17,7 @@
 .imageWrapper {
   width: 100%;
   aspect-ratio: 1 / 1;
-  background-color: #f2f2f2;
+  background-color: var(--color-white);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -34,7 +34,7 @@
 .title {
   font-size: 0.95rem;
   font-weight: 500;
-  color: #1a1a1a;
+  color: var(--color-black);
   margin: 0 0 0.35rem;
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -46,7 +46,7 @@
 .price {
   font-size: 1rem;
   font-weight: 700;
-  color: #1a1a1a;
+  color: var(--color-black);
   margin: 0 0 0.75rem;
 }
 
@@ -56,11 +56,11 @@
   box-sizing: border-box;
   text-align: center;
   margin-top: auto;
-  background-color: #1a1a1a;
-  color: #ffffff;
+  background-color: var(--color-black);
+  color: var(--color-white);
   border: none;
   padding: 0.6rem 1rem;
-  font-size: 0.85rem;
+  font-size: var(--font-size-medium);
   font-weight: 600;
   letter-spacing: 0.03em;
   cursor: pointer;
@@ -69,5 +69,5 @@
 }
 
 .buyButton:hover {
-  background-color: #333333;
+  background-color: var(--color-grey-dark);
 }
