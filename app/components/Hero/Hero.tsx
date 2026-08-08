@@ -13,22 +13,22 @@ interface Slide {
 
     const slides: Slide[] = [
     {
-        image: "/assets/i.png",
+        image: "/assets/2.png",
         title: "Experiencias visuales y sensoriales",
         subtitle: "Explora nuestra colección de objetos de diseño.",
     },
     {
-        image: "/assets/ii.png",
+        image: "/assets/22.png",
         title: "Diseño que inspira",
         subtitle: "Descubre piezas únicas para ti.",
     },
     {
-        image: "/assets/iii.png",
+        image: "/assets/222.png",
         title: "Objetos únicos",
         subtitle: "Colecciones inspiradas en el arte.",
     },
     {
-        image: "/assets/iiii.png",
+        image: "/assets/2222.png",
         title: "Hecho para destacar",
         subtitle: "Diseño, calidad y personalidad.",
     },

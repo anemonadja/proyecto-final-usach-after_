@@ -19,17 +19,17 @@ const heroSlides = [
     {
         title: "Encuentra tu estilo",
         text: "Explora nuestra colección completa de productos, pensada para cada ocasión.",
-        image: "/assets/s5.png",
+        image: "/assets/S8.png",
     },
     {
         title: "Nuevos lanzamientos",
         text: "Descubre las últimas incorporaciones a nuestro catálogo.",
-        image: "/assets/s4.png",
+        image: "/assets/S9.png",
     },
     {
         title: "Ofertas exclusivas",
         text: "Aprovecha descuentos únicos por tiempo limitado.",
-        image: "/assets/s1.png",
+        image: "/assets/S10.png",
     },
 ];
 

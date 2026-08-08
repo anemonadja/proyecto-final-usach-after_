@@ -22,14 +22,10 @@
 .imagen,
 .imagenProducto {
   object-fit: cover;
-  filter: grayscale(100%);
-  transition:
-    filter 0.4s ease,
-    transform 0.4s ease;
+  transition: transform 0.4s ease;
 }
 
 .itemProducto:hover .imagenProducto {
-  filter: grayscale(0%);
   transform: scale(1.03);
 }
 

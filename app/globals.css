@@ -24,6 +24,14 @@ body {
   --color-grey-dark2: #282828;
   --color-black: #000000;
 
+  --color-clear: #f3f3f3ff;
+  --color-clear2: #eeeae5;
+  --color-green1:#bfc7c1;
+  --color-green2: #b5bfb7;
+  --color-blue: #1E154D;
+  --color-gray: #434343ff;
+
+
 
   --font-size-h1: clamp(2.25rem, 4vw, 3rem);
   --font-size-h2: clamp(1.75rem, 3vw, 2.25rem);

@@ -9,7 +9,7 @@ export default function About() {
         <div className={styles.aboutGrid}>
           <div className={styles.imagePlaceholder}>
               <Image
-                  src="/assets/perfil.png"
+                  src="/assets/perfil1.jpg"
                   alt="Fotografía de Wild Ríos"
                   fill
                   sizes="(max-width: 768px) 50vw, 500px"

@@ -51,7 +51,7 @@ export default function Galeria({ productId = 1 }: GaleriaProps) {
                 {/* Imagen decorativa de fondo (queda detrás de la imagen principal) */}
                 <div className={`${styles.item} ${styles.itemFondo}`}>
                     <Image
-                        src="/assets/galeria5.jpg"
+                        src="/assets/g7.png"
                         alt="Imagen decorativa de fondo"
                         fill
                         className={styles.imagen}
@@ -62,7 +62,7 @@ export default function Galeria({ productId = 1 }: GaleriaProps) {
                 {/* Imagen principal */}
                 <div className={`${styles.item} ${styles.itemPrincipal}`}>
                     <Image
-                        src="/assets/galeria1.jpg"
+                        src="/assets/g1.png"
                         alt="Imagen principal de la galería"
                         fill
                         className={styles.imagen}
@@ -75,7 +75,7 @@ export default function Galeria({ productId = 1 }: GaleriaProps) {
                 {/* Imagen secundaria, a la derecha */}
                 <div className={`${styles.item} ${styles.itemDerecha}`}>
                     <Image
-                        src="/assets/galeria2.jpg"
+                        src="/assets/g2.png"
                         alt="Imagen secundaria de la galería"
                         fill
                         className={styles.imagen}
@@ -106,7 +106,7 @@ export default function Galeria({ productId = 1 }: GaleriaProps) {
                 {/* Imagen inferior, la más ancha */}
                 <div className={`${styles.item} ${styles.itemInferior}`}>
                     <Image
-                        src="/assets/galeria3.jpg"
+                        src="/assets/g3.png"
                         alt="Imagen inferior de la galería"
                         fill
                         className={styles.imagen}
